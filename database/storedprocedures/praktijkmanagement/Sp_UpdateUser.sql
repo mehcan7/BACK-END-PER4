@@ -18,6 +18,8 @@ BEGIN
         USRS.rolename = p_Rolename
     WHERE USRS.id = p_Id;
 
+    SELECT ROW_COUNT() AS affected;
+
 END$$
 
 DELIMITER ;

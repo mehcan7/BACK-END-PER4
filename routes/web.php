@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AllergeenController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TandartsController;
 use App\Http\Controllers\MondhygienistController;
@@ -15,6 +16,30 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/allergeen', [AllergeenController::class, 'index'])
+    ->name('allergeen.index')
+    ->middleware('auth');
+
+Route::get('/allergeen/create', [AllergeenController::class, 'create'])
+    ->name('allergeen.create')
+    ->middleware('auth');
+
+Route::post('/allergeen', [AllergeenController::class, 'store'])
+    ->name('allergeen.store')
+    ->middleware('auth');
+
+Route::get('/allergeen/{id}/edit', [AllergeenController::class, 'edit'])
+    ->name('allergeen.edit')
+    ->middleware('auth');
+
+Route::put('/allergeen/{id}', [AllergeenController::class, 'update'])
+    ->name('allergeen.update')
+    ->middleware('auth');
+
+Route::delete('/allergeen/{id}', [AllergeenController::class, 'destroy'])
+    ->name('allergeen.destroy')
+    ->middleware('auth');
 
 Route::get('tandarts', [TandartsController::class, 'index'])
     ->name('tandarts.index')

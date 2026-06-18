@@ -61,7 +61,7 @@ class User extends Authenticatable
             'p_Rolename' => $rolename,
         ]);
 
-        return $result;
+        return $result->affected ?? 0;
     }
 
     public function sp_DeleteUser($userId)

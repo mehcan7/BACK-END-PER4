@@ -28,6 +28,12 @@
                         >
                             Dashboard
                         </a>
+                        <a
+                            href="{{ route('allergeen.index') }}"
+                            class="inline-block px-5 py-1.5 text-gray-100 border border-gray-700 hover:border-gray-500 rounded-sm text-sm leading-normal bg-gray-800"
+                        >
+                            Allergeen
+                        </a>
                     @else
                         <a
                             href="{{ route('login') }}"

@@ -36,6 +36,10 @@
                             {{ __('Gebruikersrollen') }}
                         </x-nav-link>
                     @endif
+
+                    <x-nav-link :href="route('allergeen.index')" :active="request()->routeIs('allergeen.*')">
+                        {{ __('Allergenen') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -112,6 +116,10 @@
                     {{ __('Gebruikersrollen') }}
                 </x-responsive-nav-link>
             @endif
+
+            <x-responsive-nav-link :href="route('allergeen.index')" :active="request()->routeIs('allergeen.*')">
+                {{ __('Allergenen') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
